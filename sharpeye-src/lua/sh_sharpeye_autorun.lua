@@ -21,7 +21,7 @@ SHARPEYE_FOCUS_NAME = "SharpeYe :: Focus"
 SHARPEYE_FORCE_VERSION = true
 SHARPEYE_FORCE_USE_CLOUD = false
 
-if (CLIENT or SinglePlayer()) then
+if (CLIENT /*or SinglePlayer()*/) then
 	if (sharpeye and sharpeye.Unmount) then sharpeye.Unmount() end
 	
 	include("cl_sharpeye_cloudloader.lua")
@@ -73,4 +73,5 @@ if (CLIENT or SinglePlayer()) then
 	end
 	
 	SHARPEYE_INCLUDED_AT_LEAST_ONCE = true
+	
 end
