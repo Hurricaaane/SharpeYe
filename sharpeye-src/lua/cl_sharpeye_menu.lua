@@ -914,6 +914,7 @@ end
 
 function sharpeye:BuildHeader( mainPanel, sHeaderName )
 	////
+	
 	local topPanel = vgui.Create( "DPanel", mainPanel )
 	do
 		local title = self:BuildParamPanel( "noconvar", { Type = "panel_label", Text = sHeaderName, ContentAlignment = 5, Font = "DefaultBold" } )
@@ -921,18 +922,23 @@ function sharpeye:BuildHeader( mainPanel, sHeaderName )
 			surface.SetDrawColor( 0, 0, 0, 96 )
 			surface.DrawRect( 0, 0, self:GetWide(), self:GetTall() )
 		end
+		
 		title:SetParent( topPanel )
 		
 		local subTitle = nil
 		do
-			local MY_VERSION, ONLINE_VERSION = sharpeye_internal.GetVersionData()
+			//FIXME sharpeye_internal is nil for some reason
+			//local MY_VERSION, ONLINE_VERSION = /*sharpeye_internal.GetVersionData()*/0,0
+			//FIXME
 			MY_VERSION = "v" .. tostring(MY_VERSION)
 			ONLINE_VERSION = (ONLINE_VERSION == -1) and "(?)" or ("v" .. tostring( ONLINE_VERSION ))
 			subTitle = self:BuildParamPanel( "noconvar", { Type = "panel_label", Text = "Using " .. (sharpeye_cloud:IsUsingCloud() and "Cloud " .. ONLINE_VERSION or "Locale " .. MY_VERSION), ContentAlignment = 4 } )
 		end
 		subTitle:SetParent( topPanel )
 		
-		local MY_VERSION, ONLINE_VERSION = sharpeye_internal.GetVersionData()
+			//FIXME sharpeye_internal is nil for some reason
+		local MY_VERSION, ONLINE_VERSION = /*sharpeye_internal.GetVersionData()*/0,0
+			//FIXME
 		if ((MY_VERSION < ONLINE_VERSION) and sharpeye_cloud:IsUsingCloud()) then
 			subTitle:SetToolTip( "There is an update ! You're currently using a temporary copy of the new version (You have v" .. tostring( MY_VERSION ) .. " installed)." )
 			subTitle.Think = function (self)
