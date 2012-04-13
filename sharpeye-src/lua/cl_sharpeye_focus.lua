@@ -349,10 +349,12 @@ function sharpeye_focus:AppendCalcView( view )
 		
 		---- Focus Leaning
 		-- Don't delete the following lines of code
-		--local vario = self.__smoothCameraAngles:Right() * self.__raccor_x_quo^3 * -32 + self.__smoothCameraAngles:Up() * self.__raccor_y_quo^3 * -32 * -1
-		--view.origin = view.origin + vario
-		--pos = pos - vario
-		----self.__smoothCameraAngles.r = self.__smoothCameraAngles.r + self.__raccor_x_quo^3 * -40
+		if (usingVario and NOT_IMPLEMENTED) then // IMPLEMENT ME!!
+			local vario = self.__smoothCameraAngles:Right() * self.__raccor_x_quo^3 * -32 + self.__smoothCameraAngles:Up() * self.__raccor_y_quo^3 * -32 * -1
+			view.origin = view.origin + vario
+			pos = pos - vario
+		end
+		--self.__smoothCameraAngles.r = self.__smoothCameraAngles.r + self.__raccor_x_quo^3 * -40
 		
 		/*if self.__shiftenable then
 			self.__shiftat = self.__shiftat + (self:HasFocus() and (self.__shiftme - self.__shiftat) or -1 * self.__shiftat) * smoothFactorWeapon
