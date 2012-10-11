@@ -236,9 +236,9 @@ function HAY_MAIN:InitializeGenericConstructors()
 		if (stData.Style == "close") then
 			myPanel:SetText("x")
 		elseif (stData.Style == "left") then
-			myPanel:SetText("<")
-		elseif (stData.Style == "left") then
-			myPanel:SetText(">")
+			myPanel:SetText("<>")
+		elseif (stData.Style == "right") then
+			myPanel:SetText("<>")
 		else
 			myPanel:SetText(".")
 		end
