@@ -113,7 +113,8 @@ function sharpeye_focus:EvaluateConfigVars( optbNoPlayer )
 	FOCUS_MOUSESENSITIVITY = 1
 	FOCUS_ZOOMTIME         = 1.0
 	
-	FOCUS_FLIP         = optbNoPlayer and false or LocalPlayer():GetActiveWeapon().ViewModelFlip
+	//FOCUS_FLIP         = optbNoPlayer and false or LocalPlayer():GetActiveWeapon().ViewModelFlip
+	//FOCUS_FLIP         = false
 
 	FOCUS_LIMITANGLE_X = relaxMode and 0 or sharpeye:GetVar("detail_focus_anglex" )
 	FOCUS_LIMITANGLE_Y = relaxMode and 0 or sharpeye:GetVar("detail_focus_angley" )
@@ -349,8 +350,10 @@ function sharpeye_focus:AppendCalcView( view )
 		
 		---- Focus Leaning
 		-- Don't delete the following lines of code
-		if (usingVario and NOT_IMPLEMENTED) then // IMPLEMENT ME!!
-			local vario = self.__smoothCameraAngles:Right() * self.__raccor_x_quo^3 * -32 + self.__smoothCameraAngles:Up() * self.__raccor_y_quo^3 * -32 * -1
+		if (false or usingVario and NOT_IMPLEMENTED) then // IMPLEMENT ME!!
+			local power = 64
+			local yvariant = -5
+			local vario = self.__smoothCameraAngles:Right() * self.__raccor_x_quo^3 * -power + self.__smoothCameraAngles:Up() * self.__raccor_y_quo^3 * -power * yvariant * -1
 			view.origin = view.origin + vario
 			pos = pos - vario
 		end

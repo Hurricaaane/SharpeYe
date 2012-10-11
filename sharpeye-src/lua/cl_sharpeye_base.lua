@@ -176,11 +176,7 @@ function sharpeye.Mount()
 	sharpeye_util.OutputLineBreak( )
 	sharpeye_util.OutputIn( "Mounting ..." )
 	
-	--[[if sharpeye_internal and SHARPEYE_FORCE_VERSION and not SHARPEYE_FORCE_USE_CLOUD then	
-		sharpeye_internal.QueryVersion( nil )
-	end]]--
-	
-	//if (SinglePlayer() and SERVER) or (not SinglePlayer() and CLIENT) then
+	//if (game.SinglePlayer() and SERVER) or (not game.SinglePlayer() and CLIENT) then
 		--If SinglePlayer, hook this server-side
 		//Something weird is happening. Ignore the thing.
 		hook.Add("PlayerFootstep", "sharpeye_PlayerFootstep", sharpeye.PlayerFootstep)
@@ -299,7 +295,7 @@ function sharpeye.Mount()
 	self:CheckBackupInit()
 	self:MountMenu()
 		
-	sharpeye_util.OutputIn( "Mount complete : " .. (sharpeye_internal.IsUsingCloud() and "Cloud" or "Locale") )
+	sharpeye_util.OutputIn( "Mount complete : WORKSHOP" )
 	sharpeye_util.OutputLineBreak( )
 end
 
@@ -310,7 +306,7 @@ function sharpeye.Unmount()
 		sharpeye_util.OutputLineBreak( )
 		sharpeye_util.OutputOut( "Unmounting ..." )
 		
-		if (SinglePlayer() and SERVER) or (not SinglePlayer() and CLIENT) then
+		if (game.SinglePlayer() and SERVER) or (not game.SinglePlayer() and CLIENT) then
 			hook.Remove("PlayerFootstep", "sharpeye_PlayerFootstep")
 			
 		end

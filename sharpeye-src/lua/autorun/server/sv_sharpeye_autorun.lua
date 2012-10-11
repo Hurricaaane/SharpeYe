@@ -1,6 +1,6 @@
 SHARPEYE_SENDCOPY = false
 
-if (SinglePlayer()) then
+if (game.SinglePlayer()) then
 	include("sh_sharpeye_autorun.lua")
 	
 elseif SHARPEYE_SENDCOPY then

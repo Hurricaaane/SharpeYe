@@ -19,11 +19,11 @@ function sharpeye:UpdateMenuPosition()
 	local pos = self:GetVar( "menu_position" )
 	if pos > 0 then
 		SHARPEYE_MENU:SetPos( ScrW() - SHARPEYE_MENU:GetWide(), 0 )
-		SHARPEYE_MENU:GetContents()._p_topPanel._p_positionBox:SetType( "left" )
+		//SHARPEYE_MENU:GetContents()._p_topPanel._p_positionBox:SetType( "left" )
 		
 	else
 		SHARPEYE_MENU:SetPos( 0, 0 )
-		SHARPEYE_MENU:GetContents()._p_topPanel._p_positionBox:SetType( "right" )
+		//SHARPEYE_MENU:GetContents()._p_topPanel._p_positionBox:SetType( "right" )
 		
 	end
 	
@@ -84,9 +84,9 @@ function sharpeye:BuildMenu()
 				category:SetLabel( "Modules" )
 				
 				category.List  = vgui.Create("DPanelList", category )
-				category.List:EnableHorizontal( false )
-				category.List:EnableVerticalScrollbar( false )
-				category.List:SetAutoSize( true )
+				----category.List:EnableHorizontal( false )
+				----category.List:EnableVerticalScrollbar( false )
+				----category.List:SetAutoSize( true )
 				
 				category:SetContents( category.List )
 				formOptions:AddItem( category )
@@ -118,9 +118,9 @@ function sharpeye:BuildMenu()
 				category:SetLabel( "Motion Modifiers" )
 				
 				category.List  = vgui.Create("DPanelList", category )
-				category.List:EnableHorizontal( false )
-				category.List:EnableVerticalScrollbar( false )
-				category.List:SetAutoSize( true )
+				----category.List:EnableHorizontal( false )
+				----category.List:EnableVerticalScrollbar( false )
+				----category.List:SetAutoSize( true )
 				
 				category:SetContents( category.List )
 				formOptions:AddItem( category )
@@ -135,7 +135,7 @@ function sharpeye:BuildMenu()
 				
 				category.List:AddItem( self:BuildParamPanel( "noconvars", { Type = "panel_label", Text = "Breathing mode :" } ) )
 				do
-					local GeneralBreathingMulti = vgui.Create( "DMultiChoice" )
+					local GeneralBreathingMulti = vgui.Create( "DComboBox" )
 					GeneralBreathingMulti:AddChoice( "No breathing" )
 					GeneralBreathingMulti:AddChoice( "Based on player model" )
 					GeneralBreathingMulti:AddChoice( "Always Male" )
@@ -162,9 +162,9 @@ function sharpeye:BuildMenu()
 				category:SetLabel( "Menu shortcut" )
 				
 				category.List  = vgui.Create("DPanelList", category )
-				category.List:EnableHorizontal( false )
-				category.List:EnableVerticalScrollbar( false )
-				category.List:SetAutoSize( true )
+				----category.List:EnableHorizontal( false )
+				----category.List:EnableVerticalScrollbar( false )
+				----category.List:SetAutoSize( true )
 				
 				category:SetContents( category.List )
 				formOptions:AddItem( category )
@@ -179,9 +179,9 @@ function sharpeye:BuildMenu()
 				category:SetLabel( "New Modifiers" )
 				
 				category.List  = vgui.Create("DPanelList", category )
-				category.List:EnableHorizontal( false )
-				category.List:EnableVerticalScrollbar( false )
-				category.List:SetAutoSize( true )
+				----category.List:EnableHorizontal( false )
+				----category.List:EnableVerticalScrollbar( false )
+				----category.List:SetAutoSize( true )
 				
 				category:SetContents( category.List )
 				formOptions:AddItem( category )
@@ -203,9 +203,9 @@ function sharpeye:BuildMenu()
 				category:SetLabel( "Focus mode Help" )
 				
 				category.List  = vgui.Create("DPanelList", category )
-				category.List:EnableHorizontal( false )
-				category.List:EnableVerticalScrollbar( false )
-				category.List:SetAutoSize( true )
+				--category.List:EnableHorizontal( false )
+				--category.List:EnableVerticalScrollbar( false )
+				--category.List:SetAutoSize( true )
 				
 				category:SetContents( category.List )
 				formDetails:AddItem( category )
@@ -226,9 +226,9 @@ function sharpeye:BuildMenu()
 				category:SetLabel( "Focus mode Options" )
 				
 				category.List  = vgui.Create("DPanelList", category )
-				category.List:EnableHorizontal( false )
-				category.List:EnableVerticalScrollbar( false )
-				category.List:SetAutoSize( true )
+				--category.List:EnableHorizontal( false )
+				--category.List:EnableVerticalScrollbar( false )
+				--category.List:SetAutoSize( true )
 				
 				category:SetContents( category.List )
 				formDetails:AddItem( category )
@@ -262,7 +262,7 @@ function sharpeye:BuildMenu()
 						tReverse[id] = hs
 					end
 					
-					local GeneralMulti = vgui.Create( "DMultiChoice" )
+					local GeneralMulti = vgui.Create( "DComboBox" )
 					GeneralMulti:AddChoice( "Custom" )     // 1
 					GeneralMulti:AddChoice( "Old school" ) // 2
 					GeneralMulti:AddChoice( "Slight pan" ) // 3
@@ -305,9 +305,9 @@ function sharpeye:BuildMenu()
 				category:SetLabel( "Alignment Meters" )
 				
 				category.List  = vgui.Create("DPanelList", category )
-				category.List:EnableHorizontal( false )
-				category.List:EnableVerticalScrollbar( false )
-				category.List:SetAutoSize( true )
+				--category.List:EnableHorizontal( false )
+				--category.List:EnableVerticalScrollbar( false )
+				--category.List:SetAutoSize( true )
 				
 				category:SetContents( category.List )
 				formDetails:AddItem( category )
@@ -341,9 +341,9 @@ function sharpeye:BuildMenu()
 				category:SetLabel( "Bobbing" )
 				
 				category.List  = vgui.Create("DPanelList", category )
-				category.List:EnableHorizontal( false )
-				category.List:EnableVerticalScrollbar( false )
-				category.List:SetAutoSize( true )
+				--category.List:EnableHorizontal( false )
+				--category.List:EnableVerticalScrollbar( false )
+				--category.List:SetAutoSize( true )
 				
 				category:SetContents( category.List )
 				formDetails:AddItem( category )
@@ -369,9 +369,9 @@ function sharpeye:BuildMenu()
 				category:SetLabel( "Crosshair" )
 				
 				category.List  = vgui.Create("DPanelList", category )
-				category.List:EnableHorizontal( false )
-				category.List:EnableVerticalScrollbar( false )
-				category.List:SetAutoSize( true )
+				--category.List:EnableHorizontal( false )
+				--category.List:EnableVerticalScrollbar( false )
+				--category.List:SetAutoSize( true )
 				
 				category:SetContents( category.List )
 				formDetails:AddItem( category )
@@ -403,9 +403,9 @@ function sharpeye:BuildMenu()
 				category:SetLabel( "Sounds" )
 				
 				category.List  = vgui.Create("DPanelList", category )
-				category.List:EnableHorizontal( false )
-				category.List:EnableVerticalScrollbar( false )
-				category.List:SetAutoSize( true )
+				--category.List:EnableHorizontal( false )
+				--category.List:EnableVerticalScrollbar( false )
+				--category.List:SetAutoSize( true )
 				
 				category:SetContents( category.List )
 				formDetails:AddItem( category )
@@ -430,9 +430,9 @@ function sharpeye:BuildMenu()
 				category:SetLabel( "Advanced Tweakings" )
 				
 				category.List  = vgui.Create("DPanelList", category )
-				category.List:EnableHorizontal( false )
-				category.List:EnableVerticalScrollbar( false )
-				category.List:SetAutoSize( true )
+				--category.List:EnableHorizontal( false )
+				--category.List:EnableVerticalScrollbar( false )
+				--category.List:SetAutoSize( true )
 				
 				category:SetContents( category.List )
 				formAdvanced:AddItem( category )
@@ -462,9 +462,9 @@ function sharpeye:BuildMenu()
 				category:SetLabel( "Motion Debug" )
 				
 				category.List  = vgui.Create("DPanelList", category )
-				category.List:EnableHorizontal( false )
-				category.List:EnableVerticalScrollbar( false )
-				category.List:SetAutoSize( true )
+				--category.List:EnableHorizontal( false )
+				--category.List:EnableVerticalScrollbar( false )
+				--category.List:SetAutoSize( true )
 				
 				category:SetContents( category.List )
 				formAdvanced:AddItem( category )
@@ -695,9 +695,9 @@ function sharpeye:BuildMenu()
 				category:SetLabel( "Unhooker" )
 				
 				category.List  = vgui.Create("DPanelList", category )
-				category.List:EnableHorizontal( false )
-				category.List:EnableVerticalScrollbar( false )
-				category.List:SetAutoSize( true )
+				--category.List:EnableHorizontal( false )
+				--category.List:EnableVerticalScrollbar( false )
+				--category.List:SetAutoSize( true )
 				
 				category:SetContents( category.List )
 				formAdvanced:AddItem( category )
@@ -739,7 +739,7 @@ function sharpeye:BuildMenu()
 							category.List:AddItem( DisablerButton )
 					end
 					if counter == 0 then
-						category.List:AddItem( "<No hooks to display.>" )
+						--category.List:AddItem( "<No hooks to display.>" )
 					end
 				end
 				do
@@ -764,13 +764,17 @@ function sharpeye:BuildMenu()
 			
 		end
 		
-		formOptions:EnableVerticalScrollbar( true )
-		formDetails:EnableVerticalScrollbar( true )
-		formAdvanced:EnableVerticalScrollbar( true )
+		--formOptions:EnableVerticalScrollbar( true )
+		--formDetails:EnableVerticalScrollbar( true )
+		--formAdvanced:EnableVerticalScrollbar( true )
 		
-		tabMaster:AddSheet( "Master", formOptions, "gui/silkicons/application_view_detail", false, false, "The things you're likely need to change in-game from time to time." )
-		tabMaster:AddSheet( "Details", formDetails, "gui/silkicons/palette", false, false, "The things you're likely set up once and forget." )
-		tabMaster:AddSheet( "Advanced", formAdvanced, "gui/silkicons/wrench", false, false, "The things you'll use to tweak it even more or debug." )
+		--tabMaster:AddSheet( "Master", formOptions, "gui/silkicons/application_view_detail", false, false, "The things you're likely need to change in-game from time to time." )
+		--tabMaster:AddSheet( "Details", formDetails, "gui/silkicons/palette", false, false, "The things you're likely set up once and forget." )
+		--tabMaster:AddSheet( "Advanced", formAdvanced, "gui/silkicons/wrench", false, false, "The things you'll use to tweak it even more or debug." )
+		
+		tabMaster:AddSheet( "Master", formOptions, nil, false, false, "The things you're likely need to change in-game from time to time." )
+		tabMaster:AddSheet( "Details", formDetails, nil, false, false, "The things you're likely set up once and forget." )
+		tabMaster:AddSheet( "Advanced", formAdvanced, nil, false, false, "The things you'll use to tweak it even more or debug." )
 		
 	end
 	
@@ -926,28 +930,8 @@ function sharpeye:BuildHeader( mainPanel, sHeaderName )
 		title:SetParent( topPanel )
 		
 		local subTitle = nil
-		do
-			//FIXME sharpeye_internal is nil for some reason
-			//local MY_VERSION, ONLINE_VERSION = /*sharpeye_internal.GetVersionData()*/0,0
-			//FIXME
-			MY_VERSION = "v" .. tostring(MY_VERSION)
-			ONLINE_VERSION = (ONLINE_VERSION == -1) and "(?)" or ("v" .. tostring( ONLINE_VERSION ))
-			subTitle = self:BuildParamPanel( "noconvar", { Type = "panel_label", Text = "Using " .. (sharpeye_cloud:IsUsingCloud() and "Cloud " .. ONLINE_VERSION or "Locale " .. MY_VERSION), ContentAlignment = 4 } )
-		end
+		subTitle = self:BuildParamPanel( "noconvar", { Type = "panel_label", Text = "Using WORKSHOP", ContentAlignment = 4 } )
 		subTitle:SetParent( topPanel )
-		
-			//FIXME sharpeye_internal is nil for some reason
-		local MY_VERSION, ONLINE_VERSION = /*sharpeye_internal.GetVersionData()*/0,0
-			//FIXME
-		if ((MY_VERSION < ONLINE_VERSION) and sharpeye_cloud:IsUsingCloud()) then
-			subTitle:SetToolTip( "There is an update ! You're currently using a temporary copy of the new version (You have v" .. tostring( MY_VERSION ) .. " installed)." )
-			subTitle.Think = function (self)
-				local blink = 127 + (math.sin( math.pi * CurTime() * 0.5 ) + 1 ) * 64
-				self:SetColor( Color( 255, 255, 255, blink ) ) // TODO : ?
-				
-			end
-			
-		end
 		
 		local enableBox = self:BuildParamPanel( "core_enable", { Type = "bool_nolabel", Style = "grip" } )
 		enableBox:SetParent( title )
@@ -983,42 +967,12 @@ function sharpeye:BuildHeader( mainPanel, sHeaderName )
 		positionBox:SetParent( title )
 		positionBox:SetToolTip( "Change menu dock position." )
 		
-		local reloadCloud = self:BuildParamPanel( "noconvar", { Type = "panel_imagebutton", Material = "gui/silkicons/toybox", DoClick = function() sharpeye:CallCmd("-menu") sharpeye:ReloadFromCloud() end } )
-		reloadCloud:SetParent( subTitle )
-		reloadCloud:SetToolTip( "Press to use the latest version from the Cloud." )
-		
-		local reloadLocale = self:BuildParamPanel( "noconvar", { Type = "panel_imagebutton", Material = "gui/silkicons/application_put", DoClick = function() sharpeye:CallCmd("-menu") sharpeye:ReloadFromLocale() end } )
-		reloadLocale:SetParent( subTitle )
-		reloadLocale:SetToolTip( "Press to use your Locale installed version." )
-		
-		local loadChangelog = self:BuildParamPanel( "noconvar", { Type = "panel_button", Text = "Changelog", DoClick = function() sharpeye:CallCmd("call_changelog") end } )
-		loadChangelog:SetParent( subTitle )
-		loadChangelog:SetToolTip( "Press to view the changelog." )
-		
-		if MY_VERSION < ONLINE_VERSION then
-			loadChangelog.PaintOver = function ( self )
-				local blink = (math.sin( math.pi * CurTime() * 0.5 ) + 1 ) * 64
-				surface.SetDrawColor( 255, 255, 255, blink )
-				draw.RoundedBoxEx( 2, 0, 0, self:GetWide(), self:GetTall(), Color( 255, 255, 255, blink ), true, true, true, true  )
-				
-			end
-			loadChangelog:SetToolTip( "There are updates ! You should update your Locale." )
-			
-		else
-			loadChangelog:SetToolTip( "Press to view the changelog." )
-			
-		end
-		
 		
 		topPanel._p_title = title
 		topPanel._p_subTitle = subTitle
 		topPanel._p_enableBox = enableBox
 		topPanel._p_closeBox = closeBox
 		topPanel._p_positionBox = positionBox
-		
-		topPanel._p_reloadCloud = reloadCloud
-		topPanel._p_reloadLocale = reloadLocale
-		topPanel._p_loadChangelog = loadChangelog
 	
 	end
 	topPanel.Paint = function (self)
@@ -1035,10 +989,6 @@ function sharpeye:BuildHeader( mainPanel, sHeaderName )
 		self._p_enableBox:PerformLayout( )
 		self._p_positionBox:PerformLayout( )
 		self._p_closeBox:PerformLayout( )
-		
-		self._p_reloadCloud:PerformLayout( )
-		self._p_reloadLocale:PerformLayout( )
-		self._p_loadChangelog:PerformLayout( )
 		
 		self._p_title:CenterHorizontal( )
 		self._p_subTitle:CenterHorizontal( )
@@ -1061,17 +1011,6 @@ function sharpeye:BuildHeader( mainPanel, sHeaderName )
 		self._p_closeBox:AlignRight( boxSize * 0.1 )
 		self._p_positionBox:MoveLeftOf( self._p_closeBox, boxSize * 0.1 )
 		
-		local buttonSize = self._p_subTitle:GetTall()
-		self._p_reloadCloud:SetSize( buttonSize * 0.8, buttonSize * 0.8 )
-		self._p_reloadLocale:SetSize( buttonSize * 0.8, buttonSize * 0.8 )
-		self._p_loadChangelog:SizeToContents( )
-		self._p_loadChangelog:SetSize( self._p_loadChangelog:GetWide() + 6, buttonSize * 0.8 )
-		self._p_reloadCloud:CenterVertical( )
-		self._p_reloadLocale:CenterVertical( )
-		self._p_loadChangelog:CenterVertical( )
-		self._p_reloadCloud:AlignRight( boxSize * 0.1 )
-		self._p_reloadLocale:MoveLeftOf( self._p_reloadCloud, boxSize * 0.1 )
-		self._p_loadChangelog:MoveLeftOf( self._p_reloadLocale, boxSize * 0.3 )
 	end
 	
 	return topPanel

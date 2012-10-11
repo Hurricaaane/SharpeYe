@@ -80,10 +80,10 @@ function PANEL:Init()
    
 	self.m_bHangOpen = false
    
-	self.Canvas:EnableVerticalScrollbar( true )
+	/*self.Canvas:EnableVerticalScrollbar( true )
 	self.Canvas:SetSpacing( 0 )
 	self.Canvas:SetPadding( 5 )
-	self.Canvas:SetDrawBackground( false )
+	self.Canvas:SetDrawBackground( false )*/
 	
 	HAY_ContextContainer__Declare( self )
        
@@ -182,7 +182,7 @@ function PANEL:PerformLayout()
 	
 	if ( objContents ) then
    
-			objContents:InvalidateLayout( true )
+			//objContents:InvalidateLayout( true )
 		   
 			/*local Tall = objContents:GetTall() + 10
 			local MaxTall = ScrH()

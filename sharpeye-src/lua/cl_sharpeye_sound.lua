@@ -85,7 +85,7 @@ function sharpeye.PlayerFootstep( ply, pos, foot, sound, volume, rf )
 	
 	if not self:IsEnabled() then return end
 	if not self:IsSoundEnabled() then return end
-	if not SinglePlayer() and not (ply == LocalPlayer()) then return end
+	if not game.SinglePlayer() and not (ply == LocalPlayer()) then return end
 
 	local relativeSpeed = ply:GetVelocity():Length() / self:GetBasisRunSpeed()
 	local clampedSpeed = (relativeSpeed > 1) and 1 or relativeSpeed
@@ -189,7 +189,7 @@ function sharpeye:SoundWind()
 		
 	end
 	
-	if not ply:Alive() and ValidEntity( ply:GetRagdollEntity() ) then
+	if not ply:Alive() and IsValid( ply:GetRagdollEntity() ) then
 		self.dat.wind_velocity = ply:GetRagdollEntity():GetVelocity():Length()
 		
 	elseif not self:IsInVehicle() then

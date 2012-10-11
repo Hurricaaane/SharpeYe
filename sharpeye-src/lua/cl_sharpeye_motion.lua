@@ -57,7 +57,7 @@ function sharpeye:IsInThirdPersonMode()
 end
 
 function sharpeye:IsInRagdollMode()
-	return self:IsFirstPersonDeathEnabled() and (self:IsFirstPersonDeathHighSpeed() or not LocalPlayer():Alive()) and ValidEntity( LocalPlayer():GetRagdollEntity() )
+	return self:IsFirstPersonDeathEnabled() and (self:IsFirstPersonDeathHighSpeed() or not LocalPlayer():Alive()) and IsValid( LocalPlayer():GetRagdollEntity() )
 	
 end
 
@@ -307,7 +307,7 @@ function sharpeye.CalcView( ply, origin, angles, fov )
 	
 	--WEAPON TAP
 	local wep = ply:GetActiveWeapon()
-	if ( ValidEntity( wep ) ) then
+	if ( IsValid( wep ) ) then
 	
 		local func = wep.GetViewModelPosition
 		if ( func ) then

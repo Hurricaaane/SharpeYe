@@ -38,7 +38,7 @@ end
 function HAY_MAIN:BackupReadDump()
 	local tDump = {}
 	
-	local sHypo = file.Read( "sharpeye_config_dump.txt" )
+	local sHypo = file.Read( "sharpeye_config_dump.txt" ) or ""
 	local tLines = string.Explode("\n", sHypo)
 	
 	for iLine,sLine in pairs( tLines ) do
