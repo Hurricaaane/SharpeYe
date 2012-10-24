@@ -204,8 +204,8 @@ vgui.Register( HAY_SHORT .. "_ContextContainer", PANEL, "EditablePanel" )
 
 
 // Remove-Add Avoids mounting issues
-hook.Remove( "OnTextEntryGetFocus", "HC_" .. HAY_SHORT .. "_ContextContainer__GetFocus" )
-hook.Remove( "OnTextEntryLoseFocus", "HC_" .. HAY_SHORT .. "_ContextContainer__EndFocus" )
+pcall(function() hook.Remove( "OnTextEntryGetFocus", "HC_" .. HAY_SHORT .. "_ContextContainer__GetFocus" ) end)
+pcall(function() hook.Remove( "OnTextEntryLoseFocus", "HC_" .. HAY_SHORT .. "_ContextContainer__EndFocus" ) end)
 
 hook.Add( "OnTextEntryGetFocus", "HC_" .. HAY_SHORT .. "_ContextContainer__GetFocus", HAY_ContextContainer__GetFocus )
 hook.Add( "OnTextEntryLoseFocus", "HC_" .. HAY_SHORT .. "_ContextContainer__EndFocus", HAY_ContextContainer__EndFocus )

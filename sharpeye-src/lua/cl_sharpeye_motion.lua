@@ -48,7 +48,7 @@ function sharpeye:IsMotionBlurEnabled()
 end
 
 function sharpeye:IsInThirdPersonMode()
-	return (GetViewEntity() ~= LocalPlayer()) or LocalPlayer():ShouldDrawLocalPlayer()
+	return (GetViewEntity() ~= LocalPlayer()) or (LocalPlayer().ShouldDrawLocalPlayer and LocalPlayer():ShouldDrawLocalPlayer()) or false
 	--return false
 	--return self.dat.hasDrawnLocalPlayer
 	--return GAMEMODE:ShouldDrawLocalPlayer()

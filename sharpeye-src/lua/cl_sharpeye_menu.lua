@@ -747,7 +747,7 @@ function sharpeye:BuildMenu()
 					DevtMultiline:SetMultiline( true )
 					do
 						local myText = "REFERENCE :: "
-						for k,v in pairs( hook.GetTable()["CalcView"] ) do
+						for k,v in pairs( hook.GetTable()["CalcView"] or {} ) do
 							myText = myText .. tostring(k) .. " >> "
 						end
 						DevtMultiline:SetText( myText )
@@ -764,9 +764,9 @@ function sharpeye:BuildMenu()
 			
 		end
 		
-		--formOptions:EnableVerticalScrollbar( true )
-		--formDetails:EnableVerticalScrollbar( true )
-		--formAdvanced:EnableVerticalScrollbar( true )
+		formOptions:EnableVerticalScrollbar( true )
+		formDetails:EnableVerticalScrollbar( true )
+		formAdvanced:EnableVerticalScrollbar( true )
 		
 		--tabMaster:AddSheet( "Master", formOptions, "gui/silkicons/application_view_detail", false, false, "The things you're likely need to change in-game from time to time." )
 		--tabMaster:AddSheet( "Details", formDetails, "gui/silkicons/palette", false, false, "The things you're likely set up once and forget." )
